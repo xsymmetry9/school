@@ -1,1 +1,1 @@
-This is a Ruby On rails course on Udemy
+This is a Ruby On rails course on Udemy by Gary Lei
