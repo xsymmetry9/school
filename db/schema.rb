@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_11_15_131254) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_15_145149) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "student_progress_reports", force: :cascade do |t|
+    t.string "student_name"
+    t.string "language"
+    t.string "course_name"
+    t.string "book_name"
+    t.text "feedback"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 end

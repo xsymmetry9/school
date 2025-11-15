@@ -1,0 +1,11 @@
+<% content_for :title, "New student progress report" %>
+
+<h1>New student progress report</h1>
+
+<%= render "form", student_progress_report: @student_progress_report %>
+
+<br>
+
+<div>
+  <%= link_to "Back to student progress reports", student_progress_reports_path %>
+</div>
