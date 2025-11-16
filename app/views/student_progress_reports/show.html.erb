@@ -1,10 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @student_progress_report %>
-
-<div>
-  <%= link_to "Edit this student progress report", edit_student_progress_report_path(@student_progress_report) %> |
-  <%= link_to "Back to student progress reports", student_progress_reports_path %>
-
-  <%= button_to "Destroy this student progress report", @student_progress_report, method: :delete %>
-</div>
+<h1>Student Progress Report</h1>
+<p><strong>Name:</strong> <%= @student_progress_reports.student_name %></p>
+<p><strong>Language:</strong> <%= @student_progress_reports.language %></p>
+<p><strong>Course name:</strong> <%= @student_progress_reports.course_name %></p>
+<p><strong>Book name:</strong> <%= @student_progress_reports.book_name %></p>
+<p><strong>Feedback</strong></p>
+<p><%= @student_progress_reports.feedback %></p>

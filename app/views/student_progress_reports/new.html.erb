@@ -1,11 +1,28 @@
-<% content_for :title, "New student progress report" %>
+<h1>Student Progress Report Form</h1>
 
-<h1>New student progress report</h1>
+<%= form_with model: @student_progress_report, local: true do |form| %>
+    <p>
+        <%= form.label :student_name %>
+        <%= form.text_field :student_name %>
+    </p>
+    <p>
+        <%= form.label :language %>
+        <%= form.text_field :language %>
+    </p>    
+    <p>
+        <%= form.label :course_name %>
+        <%= form.text_field :course_name %>
+    </p>    
+    <p>
+        <%= form.label :book_name %>
+        <%= form.text_field :book_name%>
+    </p>
 
-<%= render "form", student_progress_report: @student_progress_report %>
+       <p>
+        <%= form.label :feedback %>
+        <%= form.textarea :feedback, size: "70x5"%>
+    </p>
 
-<br>
+    <%= form.submit "Save"%>
 
-<div>
-  <%= link_to "Back to student progress reports", student_progress_reports_path %>
-</div>
+<% end %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :student_progress_reports
-  resources :articles, only: [:show, :index]
+  resources :student_progress_reports, only: [:show, :index, :new, :create]
+  resources :articles, only: [:show, :index, :new, :create]
 root 'pages#home'
 get 'about', to:'pages#about'
 

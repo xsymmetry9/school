@@ -1,16 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<h1>My Student Progress Reports</h1>
 
-<% content_for :title, "Student progress reports" %>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Language</td>
+            <td>Course Name</td>
+            <td>Book Name</td>
+            <td>Feedback</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
 
-<h1>Student progress reports</h1>
-
-<div id="student_progress_reports">
-  <% @student_progress_reports.each do |student_progress_report| %>
-    <%= render student_progress_report %>
-    <p>
-      <%= link_to "Show this student progress report", student_progress_report %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New student progress report", new_student_progress_report_path %>
+    <tbody>
+        <% @student_progress_reports.each do |report| %>
+            <tr>
+                <td><%= report.student_name %></td>
+                <td><%= report.language %></td>
+                <td><%= report.course_name %></td>
+                <td><%= report.book_name %></td>
+                <td><%= report.feedback %></td>
+                <td>some actions </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
