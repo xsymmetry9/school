@@ -1,17 +1,5 @@
 <h1>Create new article</h1>
 
-<%= form_with scope: :article, url: articles_path, local: true do |form| %>
-  <p>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </p>
+<%= render 'form' %>
 
-    <p>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= link_to 'Return to articles listing', articles_path %>

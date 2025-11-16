@@ -8,3 +8,22 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+h1{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+table{
+    width: 100%;
+    border: 1px solid black;
+}
+thead{
+}
+td{
+    padding: 4px;
+    text-align: center;
+}
+
+
