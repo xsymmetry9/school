@@ -7,14 +7,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"></a>
-        </li>
-        <li class="nav-item">
-        <%= link_to "Articles", articles_path, class:"nav-link" %>
-        </li>
-        <li class="nav-item">
-        <%= link_to "SPR", student_progress_reports_path, class: "nav-link" %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Articles
@@ -22,6 +14,17 @@
           <ul class="dropdown-menu">
             <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>
             <%= link_to "View Articles", articles_path, class: "dropdown-item" %>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SPR
+          </a>
+          <ul class="dropdown-menu">
+            <%= link_to "Create SPR report", new_student_progress_report_path, class: "dropdown-item" %>
+            <%= link_to "View SPRs", student_progress_reports_path, class: "dropdown-item" %>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
