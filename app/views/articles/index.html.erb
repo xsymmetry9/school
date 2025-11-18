@@ -1,33 +1,27 @@
-<h1>Articles</h1>
-<p>
-    <%= link_to 'Home', root_path %> | 
-    <%= link_to 'About', about_path %> |
-    <%= link_to 'Progress Reports', student_progress_reports_path %>
-</p>
-<table>
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th colspan="3">Actions</th>
-        </tr>
-
-
-    </thead>
-
-    <tbody>
+<div id="page-content">
+    <h1 class="text-center mt-4">Listing all Articles</h1>
+    <div class="container">
         <% @articles.each do |article| %>
-        <tr>
-            <td><%= article.title %></td>
-            <td><%= article.description %></td>
-            <td><%= link_to 'Show', article_path(article), method: :show %></td>
-            <td><%= link_to 'Edit', edit_article_path(article), method: :edit %></td>
-            <td><%= link_to 'Delete', article_path(article), data: {turbo_method: :Delete, turbo_confirm: "Are you sure?"} %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+            <div class="row justify-content-md-center">
+                <div class="col-md-8 mt-4">
+                    <div class="card text-center shadow mb-5 bg-body-tertiary rounded">
+                        <div class="card-header fst-italic">
+                            By: Gary Lei
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-success"><%= article.title %></h5>
+                            <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+                            <%= link_to 'Show', article_path(article), method: :show, class: "btn btn-outline-success" %>
+                            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-info" %>
+                            <%= link_to 'Delete', article_path(article), data:{turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %>
 
-<p>
-    <%= link_to 'Create new article', new_article_path %>
-</p>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <small>Created <%= time_ago_in_words(article.created_at) %> ago, updated <%= time_ago_in_words(article.updated_at) %> ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

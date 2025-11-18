@@ -1,0 +1,36 @@
+/* app/assets/stylesheets/custom.css */
+
+#logo {
+    float: left;
+    font-size: 1.7rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #000;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+#home-container {
+    margin-top: 6rem;
+}
+
+.jumbotron {
+    background-image: url('jumbo-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 450px;
+}
+
+#page-content {
+    flex: 1 0 auto;
+    background-color: lightgrey;
+}
