@@ -12,3 +12,7 @@ heroku run rails db:migrate
 heroku open
 
 ```
+
+Introduction
+
+add admin user functionality
