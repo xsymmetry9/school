@@ -49,17 +49,12 @@
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false">
-      Profile
+      <%= current_user.admin? ? "Admin [#{current_user.username}]" : "Profile" %>
     </button>
     <ul class="dropdown-menu">
       <li class="nav-item">
-        <%= link_to "My profile",
+        <%= link_to "View Profile",
                     user_path(current_user),
-                    class: "dropdown-item" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "View Articles",
-                    articles_path,
                     class: "dropdown-item" %>
       </li>
       <li class="nav-item">
@@ -73,14 +68,13 @@
                     class: "dropdown-item text-danger",
                     data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
       </li>
-      <li class="nav-item">
-        <%= link_to "Log out", logout_path,
-                    class: "dropdown-item",
-                    data: { turbo_method: :delete } %>
-      </li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
+
     </ul>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Log out", logout_path,
+                class: "nav-item nav-link",
+                data: { turbo_method: :delete } %>
   </li>
 <% else %>
   <li class="nav-item">
