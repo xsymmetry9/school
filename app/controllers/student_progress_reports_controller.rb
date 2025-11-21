@@ -1,8 +1,7 @@
 
 class StudentProgressReportsController < ApplicationController
-
+before_action :set_student_progress_report, only: [:show, :edit, :update, :destroy]
   def show
-    @student_progress_reports = StudentProgressReport.find(params[:id])
     
   end
 
@@ -19,5 +18,25 @@ class StudentProgressReportsController < ApplicationController
     @student_progress_report.save
     redirect_to @student_progress_report
   end
+
+  def edit
+
+  end
+
+  def update
+
+  end 
+
+  def destroy
+    @student_progress_report.destroy
+    redirect_to student_progress_reports_path
+  end
+
+  private
+  
+  def set_student_progress_report
+    @student_progress_report = StudentProgressReport.find(params[:id])
+  end
+
 
 end
