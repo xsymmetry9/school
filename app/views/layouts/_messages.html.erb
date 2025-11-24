@@ -1,6 +1,6 @@
 <% flash.each do |name, msg| %>
   <div class="container mt-3">
-    <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissible fade show" role="alert">
+    <div class="alert alert-<%= name == "notice" || "successs" ? "success" : "danger" %> alert-dismissible fade show" role="alert">
       <%= msg %>
       <button
         type="button"
